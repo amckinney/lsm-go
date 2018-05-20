@@ -1,0 +1,9 @@
+protoc_version: 3.5.1
+gen:
+    go_options:
+        import_path: github.com/amckinney/lsm-go
+    plugins:
+        - name: go
+          flags: plugins=grpc
+          type: go
+          output: gen
