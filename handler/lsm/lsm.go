@@ -3,11 +3,11 @@ package lsm
 import (
 	"context"
 
-	"github.com/amckinney/lsm-go/gen/idl/lsm-go"
+	"github.com/amckinney/lsm-go/gen/idl/lsm"
 )
 
 // Handler is a LSM Storage handler.
-type Handler = lsmgopb.LSMGoServer
+type Handler = lsmpb.LSMServer
 
 type handler struct{}
 
@@ -16,6 +16,6 @@ func New() (Handler, error) {
 	return &handler{}, nil
 }
 
-func (h *handler) Get(context.Context, *lsmgopb.GetRequest) (*lsmgopb.GetResponse, error) { return nil, nil }
+func (h *handler) Get(context.Context, *lsmpb.GetRequest) (*lsmpb.GetResponse, error) { return nil, nil }
 
-func (h *handler) Set(context.Context, *lsmgopb.SetRequest) (*lsmgopb.SetResponse, error) { return nil, nil }
+func (h *handler) Set(context.Context, *lsmpb.SetRequest) (*lsmpb.SetResponse, error) { return nil, nil }

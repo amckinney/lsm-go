@@ -3,7 +3,7 @@ package server
 import (
 	"net"
 
-	"github.com/amckinney/lsm-go/gen/idl/lsm-go"
+	"github.com/amckinney/lsm-go/gen/idl/lsm"
 
 	"go.uber.org/fx"
 	"google.golang.org/grpc"
@@ -16,7 +16,7 @@ var Module = fx.Options(
 		grpc.NewServer,
 	),
 	fx.Invoke(
-		lsmgopb.RegisterLSMGoServer,
+		lsmpb.RegisterLSMServer,
 		func(s *grpc.Server, l net.Listener) { s.Serve(l) },
 	),
 )

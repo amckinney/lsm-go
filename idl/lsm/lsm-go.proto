@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package lsm.go;
+package lsm;
 
-option go_package = "lsmgopb";
+option go_package = "lsmpb";
 
 message GetRequest {
   string key = 1;
@@ -19,7 +19,7 @@ message SetRequest {
 
 message SetResponse {}
 
-service LSMGo {
+service LSM {
   rpc Get(GetRequest) returns (GetResponse) {}
   rpc Set(SetRequest) returns (SetResponse) {}
 }
